@@ -203,7 +203,7 @@ BRUSHED.contactForm = function(){
 			data: fields,
 			dataType: 'json',
 			success: function(response) {
-				
+        console.log('yay')
 				if(response.status){
 					$('#contact-form input').val('');
 					$('#contact-form textarea').val('');

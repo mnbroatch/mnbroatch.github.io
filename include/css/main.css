@@ -902,6 +902,13 @@ nav#menu #menu-nav li a:hover {
    Contact Section
 ================================================== */
 
+#resume {
+  width:100%;
+  height:600px;
+  margin-bottom:30px;
+}
+
+
 .contact-details h3 {
 	color: #FFFFFF;
     font-size: 24px;
