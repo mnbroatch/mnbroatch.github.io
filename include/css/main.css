@@ -25,7 +25,7 @@ html, hmtl a{
 
 body{
 	background:#2F3238;
-	color:#7FF2F9;
+	color:#EEEEEE;
 	font-weight:300;
 	font-size:16px;
 	font-family: 'Titillium Web', sans-serif;
@@ -34,7 +34,7 @@ body{
 
 
 a{
-	color:#DE5E60;
+	color:#7FF2F9;
 	text-decoration: none;
 	cursor: pointer;
 	
@@ -104,7 +104,7 @@ hr {
 }
 
 .color-text {
-    color: #DE5E60;
+    color: #7FF2F9;
 }
 
 .through{
@@ -381,7 +381,7 @@ h3.spec {
 
 #home-slider #nextslide:hover,
 #home-slider #prevslide:hover {
-	background-color:#DE5E60;
+	background-color:#7FF2F9;
 }
 
 #home-slider #nextslide i,
@@ -439,7 +439,7 @@ h3.spec {
 
 #home-slider ul#slide-list li.current-slide a,
 #home-slider ul#slide-list li.current-slide a:hover {
-	background-color:#DE5E60;
+	background-color:#7FF2F9;
 }
 
 #home-slider #nextsection {
@@ -457,7 +457,7 @@ h3.spec {
 }
 
 #home-slider #nextsection:hover {
-	background-color:#DE5E60;
+	background-color:#7FF2F9;
 }
 
 #home-slider #nextsection i {
@@ -561,7 +561,7 @@ nav#menu #menu-nav li a {
 
 nav#menu #menu-nav li.current a,
 nav#menu #menu-nav li a:hover {
-	color: #DE5E60;
+	color: #7FF2F9;
 }
 
 
@@ -700,7 +700,7 @@ nav#menu #menu-nav li a:hover {
 }
 
 .work-nav #filters li a.selected {
-	color: #DE5E60;
+	color: #7FF2F9;
 }
 
 #thumbs {
@@ -760,7 +760,7 @@ nav#menu #menu-nav li a:hover {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: #DE5E60;
+	background: #7FF2F9;
 	
 	opacity: 0.80;
 	filter: alpha(opacity=80);
@@ -840,7 +840,7 @@ nav#menu #menu-nav li a:hover {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: #DE5E60;
+	background: #7FF2F9;
 	
 	opacity: 0.80;
 	filter: alpha(opacity=80);
@@ -992,7 +992,7 @@ nav#menu #menu-nav li a:hover {
 }
 
 #contact-form .submit:hover {
-    background: #DE5E60;
+    background: #7FF2F9;
     color: #FFFFFF;
 }
 
@@ -1117,7 +1117,7 @@ nav#menu #menu-nav li a:hover {
 
 #social ul li:hover a,
 #social ul li.active a {
-	background-color: #DE5E60;	
+	background-color: #7FF2F9;	
 	
 	-webkit-transform: rotateY(0deg);
 	   -moz-transform: rotateY(0deg);
@@ -1182,7 +1182,7 @@ footer .credits {
 }
 
 #back-to-top:hover {
-	background-color:#DE5E60;
+	background-color:#7FF2F9;
 }
 
 #back-to-top i {
@@ -1258,7 +1258,7 @@ footer .credits {
 	margin: -50px 0 0 -50px;
 	width: 100px;
 	height: 100px;
-	background: #DE5E60;
+	background: #7FF2F9;
 	-webkit-border-radius: 999px;
 	-moz-border-radius: 999px;
 	border-radius: 999px;
