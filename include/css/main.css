@@ -669,6 +669,30 @@ nav#menu #menu-nav li a:hover {
    Section Portfolio
 ================================================== */
 
+.link-button {
+  display: inline-block;
+  background-color: #7FF2F9;
+  color: black;
+  margin: 3px;
+  padding:3px;
+  border: 2px solid #7FF2F9;
+  border-radius: 2px;
+}
+
+.resume-download {
+  position: relative;
+  right: 22px;
+  bottom: 8px;
+}
+
+.link-button>a {
+  color: black;
+}
+
+.link-button:hover {
+  background-color: #4CBFC6;
+}
+
 .type-work {
 	color: #FFFFFF;
 	font-size: 24px;

@@ -205,7 +205,7 @@
 	visibility: hidden;
 	max-width: 99999px;
 	max-height: 99999px;
-	overflow: visible !important;
+	overflow: auto !important;
 }
 
 /* Overlay helper */
@@ -218,7 +218,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	overflow: hidden !important;
+	overflow: auto !important;
 	display: none;
 	z-index: 8010;
 	background: url('fancybox_overlay.png');
