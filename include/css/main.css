@@ -669,6 +669,10 @@ nav#menu #menu-nav li a:hover {
    Section Portfolio
 ================================================== */
 
+.fancybox {
+  padding: 20px!important;
+}
+
 .link-button {
   display: inline-block;
   background-color: #7FF2F9;
@@ -679,9 +683,13 @@ nav#menu #menu-nav li a:hover {
   border-radius: 2px;
 }
 
+.technology-list {
+  color: #7FF2F9;
+}
+
 .resume-download {
   position: relative;
-  right: 22px;
+  right: 31px;
   bottom: 8px;
 }
 
@@ -785,20 +793,20 @@ nav#menu #menu-nav li a:hover {
 	width: 100%;
 	height: 100%;
 	background: #47868A;
-	
+  right: 20px;
+  bottom: 20px;
 	opacity: 0.80;
 	filter: alpha(opacity=80);
 }
 
 .item-thumbs .hover-wrap .overlay-img-thumb {
 	position: absolute;
-	top: 50%;
-	left: 50%;
+	top: calc(50% - 20px);
+	left: calc(50% - 20px);
 	margin: -16px 0 0 -16px;
 	color: #FFFFFF;
 	font-size: 32px;
 	line-height: 1em;
-	
 	opacity: 1;
 	filter: alpha(opacity=100);
 }
