@@ -15,7 +15,7 @@
     "babel-loader": "^8.0.6"
   },
   "scripts": {
-    "build": "build-storybook -c .storybook -o docs",
+    "build": "build-storybook -c .storybook -o build",
     "storybook": "start-storybook",
     "test": "test"
   },
