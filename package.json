@@ -1,0 +1,23 @@
+{
+  "name": "matthew-broatch-portfolio",
+  "version": "0.0.0",
+  "description": "Portfolio of Matthew Broatch",
+  "main": "index.js",
+  "dependencies": {
+    "deepmerge": "^4.0.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@storybook/addon-knobs": "^5.1.11",
+    "@storybook/react": "^5.1.11",
+    "babel-loader": "^8.0.6"
+  },
+  "scripts": {
+    "storybook": "start-storybook",
+    "test": "test"
+  },
+  "author": "Matthew Broatch",
+  "license": "ISC"
+}
