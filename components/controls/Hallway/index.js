@@ -1,10 +1,10 @@
 import React, { useState, useCallback, cloneElement } from 'react'
 
 import baseStyles from './baseStyles.js'
-import SlidingDoor from '../SlidingDoor.js'
+import SlidingDoor from '../SlidingDoor'
 
 export default function Hallway ({
-  doors = []
+  doors = [],
   final = []
 }) {
   const [ currentDoorIndex, setCurrentDoorIndex ] = useState(0)
