@@ -6,7 +6,8 @@
   "dependencies": {
     "deepmerge": "^4.0.0",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-transition-group": "^4.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
