@@ -1,0 +1,31 @@
+{
+  "root": {
+    "text": "Welcome to the personal site of Matthew Broatch! I'm currently showcasing this DialogueTree component!",
+    "choices": [
+      {
+        "text": "Tell me more!",
+        "then": "tellMeMore"
+      },
+      {
+        "text": "Got anything else?",
+        "then": "anythingElse"
+      }
+    ]
+  },
+  "tellMeMore": {
+    "text": "What else do you wanna know?",
+    "choices": [
+      {
+        "text": "What's the easiest way to play with this right now?",
+        "then": {
+          "text": "",
+          "then": "tellMeMore"
+        }
+      },
+      {
+        "text": "Got anything else?",
+        "then": "anythingElse"
+      }
+    ]
+  }
+}
