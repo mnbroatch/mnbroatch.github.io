@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useCallback } from 'react'
 
 export default function JavaScriptAnimation ({
   children,
@@ -7,32 +7,26 @@ export default function JavaScriptAnimation ({
   memberStyles = {},
   containerStyles = {}
 }) {
+  const initialTimeRef = useRef(Date.now())
   const containerRef = useRef()
-  const characters = typeof children === 'string'
-    ? children.split('')
-    : children
+  const animationFrameIdRef = useRef()
+
+  const animate = useCallback(() => {
+    const elapsedTime = Date.now() - initialTimeRef.current
+    const element = containerRef.current
+    modifyElement(element, elapsedTime)
+    animationFrameIdRef.current = requestAnimationFrame(animate)
+  }, [modifyElement])
 
   useEffect(() => {
-    const initialTime = Date.now()
-
-    function animate () {
-      if (!containerRef.current) return
-      const elapsedTime = Date.now() - initialTime
-      const element = containerRef.current
-      modifyElement(element, elapsedTime)
-      if (active) requestAnimationFrame(animate)
-    }
-
-    animate()
-  }, [ active, children ])
+    if (!active || !containerRef.current) return
+    animationFrameIdRef.current = requestAnimationFrame(animate)
+    return () => { cancelAnimationFrame(animationFrameIdRef.current) }
+  }, [active, modifyElement])
 
   return (
     <span ref={containerRef} style={containerStyles}>
-      {characters.map((character, index) => (
-        <span key={index} style={memberStyles}>
-          {character}
-        </span>
-      ))}
+      {children}
     </span>
   )
 }

@@ -5,15 +5,16 @@ import DialogueNode from '../DialogueNode'
 import styles from './styles.css'
 
 export default function DialogueTree ({
-  dialogue
+  dialogue,
+  customNodeComponents = {},
+  scripts = {}
 }) {
   const [ history, setHistory ] = useState([])
   const [ currentNode, setCurrentNode ] = useState(dialogue.root)
   const innerRef = useRef()
 
   const changeNode = useCallback((newNode) => {
-    if (typeof newNode === 'string') newNode = dialogue[newNode]
-
+    if (typeof newNode === 'string') newNode = findNode(dialogue, newNode)
     setHistory([ ...history, currentNode ])
     setCurrentNode(newNode)
   })
@@ -22,14 +23,34 @@ export default function DialogueTree ({
     innerRef.current.lastChild.scrollIntoView({ behavior: 'smooth' })
   })
 
+  const NodeComponent = currentNode && currentNode.custom
+    ? customNodeComponents[currentNode.custom]
+    : DialogueNode
 
   return (
     <div className='dialogue-tree'>
       <div className='dialogue-tree__inner' ref={innerRef}>
-        {history.map(node => <DialogueNode {...node} />)}
-        <DialogueNode {...currentNode} changeNode={changeNode} active />
-        <div />
+        {[ ...history, currentNode ].map((node, index) => {
+          const NodeComponent = node && node.custom
+            ? customNodeComponents[node.custom]
+            : DialogueNode
+
+          return (
+            <NodeComponent
+              key={index}
+              {...node}
+              changeNode={changeNode}
+              scripts={scripts}
+              active={index === history.length}
+            />
+          )
+        })}
       </div>
     </div>
   )
+}
+
+//  TODO: update to find nested nodes
+function findNode (dialogue, newNodeAccessPath) {
+  return dialogue[newNodeAccessPath]
 }

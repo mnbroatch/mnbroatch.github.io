@@ -16,9 +16,17 @@
     "text": "What else do you wanna know?",
     "choices": [
       {
+        "hiddenWhen": "alwaysTrue",
+        "text": "Surprise me!",
+        "then": {
+          "custom": "Surprise",
+          "then": "tellMeMore"
+        }
+      },
+      {
         "text": "What's the easiest way to play with this right now?",
         "then": {
-          "text": "",
+          "text": "Press the 'A' key (On mobile, go to 'Addons'). Edits you make to the 'Dialogue' JSON will take effect moving forward. \n Try removing the line starting with 'hiddenIf' in the first choice of the 'tellMeMore' path!",
           "then": "tellMeMore"
         }
       },
