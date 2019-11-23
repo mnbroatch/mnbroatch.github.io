@@ -26,7 +26,7 @@
       {
         "text": "What's the easiest way to play with this right now?",
         "then": {
-          "text": "Press the 'A' key (On mobile, go to 'Addons'). Edits you make to the 'Dialogue' JSON will take effect moving forward. \n Try removing the line starting with 'hiddenIf' in the first choice of the 'tellMeMore' path!",
+          "text": "Because this site is actually a Storybook, you can mess around in the browser!\n\nPress the 'A' key (On mobile, tap **Addons**). \n\n Edits you make to the JSON will take effect moving forward. \n Try removing the line starting with 'hiddenIf' in the first choice of the 'tellMeMore' path!",
           "then": "tellMeMore"
         }
       },

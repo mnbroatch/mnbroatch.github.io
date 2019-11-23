@@ -13,9 +13,11 @@ export default function DialogueTree ({
   const [ currentNode, setCurrentNode ] = useState(dialogue.root)
   const innerRef = useRef()
 
-  const changeNode = useCallback((newNode) => {
-    if (typeof newNode === 'string') newNode = findNode(dialogue, newNode)
-    setHistory([ ...history, currentNode ])
+  const changeNode = useCallback((choice) => {
+    const newNode = typeof choice.then === 'string'
+      ? findNode(dialogue, choice.then)
+      : choice.then
+    setHistory([ ...history, { ...currentNode, chosenChoice: choice } ])
     setCurrentNode(newNode)
   })
 

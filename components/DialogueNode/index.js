@@ -1,4 +1,5 @@
 import React, { useState, useCallback, cloneElement } from 'react'
+import ReactMarkdown from 'react-markdown'
 
 import styles from './styles.css'
 
@@ -25,21 +26,23 @@ export default function DialogueTree ({
     choices = [{ text: '(Continue)', then }]
   }
 
+  // TODO: "Choice Has Been Clicked Before" indicator
+
   if (chosenChoice) choices = [chosenChoice]
 
   return (
     <div className={rootClassName}>
-      {text}
+      <ReactMarkdown source={text} />
       <ul className='choices'>
         {choices.map((choice, index) => {
-          if (hiddenWhen && hiddenWhen()) return null
+          if (choice.hiddenWhen && scripts[choice.hiddenWhen]()) return null
 
           return (
             <li
               key={index}
-              onClick={active ? () => changeNode(choice.then) : undefined}
+              onClick={active ? () => changeNode(choice) : undefined}
             >
-              {choice.text}
+              <ReactMarkdown source={choice.text} />
             </li>
           )
         })}
