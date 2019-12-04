@@ -2,6 +2,7 @@ import React from 'react';
 import { forceReRender } from '@storybook/react';
 import { withKnobs, object } from '@storybook/addon-knobs';
 
+import Markdown from 'markdown-to-jsx';
 import DialogueTree from 'react-dialogue-tree';
 import RainbowWaveAnimation from '../components/RainbowWaveAnimation';
 import welcomeDialogue from './welcomeDialogue.json';
@@ -9,6 +10,8 @@ import welcomeDialogue from './welcomeDialogue.json';
 import './styles.stories.css'
 
 //  https://coolors.co/616163-fddd9b-929487-a1b0ab-c3dac3
+
+const transformTextMarkdown = text => <Markdown>{text}</Markdown>
 
 const Surprise = ({ active, changeNode, then }) => {
   const rootClassName = active
@@ -34,6 +37,7 @@ export const WelcomeDialogue = () => {
           dialogue={dialogue}
           scripts={scripts}
           customComponents={customComponents}
+          transformText={transformTextMarkdown}
         />
       </div>
     </div>

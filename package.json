@@ -4,6 +4,7 @@
   "description": "Portfolio of Matthew Broatch",
   "main": "index.js",
   "dependencies": {
+    "markdown-to-jsx": "^6.10.3",
     "react": "^16.9.0",
     "react-dialogue-tree": "^0.1.0",
     "react-dom": "^16.9.0",
