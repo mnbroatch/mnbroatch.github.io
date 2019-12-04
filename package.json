@@ -4,8 +4,8 @@
   "description": "Portfolio of Matthew Broatch",
   "main": "index.js",
   "dependencies": {
-    "deepmerge": "^4.0.0",
     "react": "^16.9.0",
+    "react-dialogue-tree": "^0.1.0",
     "react-dom": "^16.9.0",
     "react-markdown": "^4.2.2",
     "react-transition-group": "^4.3.0"
