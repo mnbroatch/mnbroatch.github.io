@@ -1,7 +1,7 @@
 import React from 'react'
 import { number, boolean, withKnobs } from '@storybook/addon-knobs'
 
-import RainbowWaveAnimation from './index.js'
+import RainbowWaveAnimation from '../../components/RainbowWaveAnimation'
 
 export const RainbowWaveAnimationStory = () => {
   const active = boolean('active', true)
@@ -50,5 +50,5 @@ export default {
   title: 'RainbowWaveAnimation',
   component: RainbowWaveAnimationStory,
   decorators: [withKnobs],
-  parameters: { knobs: { escapeHTML: false } }
+  parameters: { knobs: { escapeHTML: false }, options: { showPanel: true } }
 }
