@@ -1,7 +1,7 @@
 import React from 'react';
 import Markdown from 'markdown-to-jsx';
 import DialogueTree from 'react-dialogue-tree'
-import basicDialogueSource from 'raw-loader!./Basic.js';
+import basicDialogueSource from '!!raw-loader!./Basic.js';
 console.log('basicDialogueSource', basicDialogueSource)
 
 const dialogue = {
