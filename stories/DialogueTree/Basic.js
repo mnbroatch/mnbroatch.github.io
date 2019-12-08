@@ -1,8 +1,8 @@
 import React from 'react';
 import Markdown from 'markdown-to-jsx';
 import DialogueTree from 'react-dialogue-tree'
-import basicDialogueSource from '!!raw-loader!./Basic.js';
-console.log('basicDialogueSource', basicDialogueSource)
+import SourceCode from './SourceCode.js'
+import sourceCode from '!!raw-loader!./Basic.js'
 
 const dialogue = {
   root: {
@@ -34,9 +34,11 @@ const dialogue = {
 
 export default () => (
   <div>
-    <pre>{basicDialogueSource}</pre>
+    <SourceCode>{sourceCode}</SourceCode>
     <div className={'dialogue-tree-container'}>
+
       <DialogueTree dialogue={dialogue} />
+
     </div>
   </div>
 )

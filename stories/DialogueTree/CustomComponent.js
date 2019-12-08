@@ -1,5 +1,7 @@
 import React from 'react';
 import DialogueTree from 'react-dialogue-tree'
+import SourceCode from './SourceCode.js'
+import sourceCode from '!!raw-loader!./CustomComponent.js';
 
 const ButtonDialogueNode = ({ active, goToNode, text, then }) => (
   <button
@@ -23,10 +25,15 @@ const dialogue = {
 }
 
 export default () => (
-  <div className={'dialogue-tree-container'}>
-    <DialogueTree
-      dialogue={dialogue}
-      customComponents={{ ButtonDialogueNode }}
-    />
+  <div>
+    <SourceCode>{sourceCode}</SourceCode>
+    <div className={'dialogue-tree-container'}>
+
+      <DialogueTree
+        dialogue={dialogue}
+        customComponents={{ ButtonDialogueNode }}
+      />
+
+    </div>
   </div>
 )

@@ -1,5 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import DialogueTree from 'react-dialogue-tree'
+import SourceCode from './SourceCode.js'
+import sourceCode from '!!raw-loader!./CustomScript.js';
 
 const dialogue = {
   root: {
@@ -31,14 +33,16 @@ export default () => {
   const [backgroundColor, setBackgroundColor] = useState('yellow')
 
   return (
-    <div
-      className={'dialogue-tree-container'}
-      styles={{ backgroundColor }}
-    >
-      <DialogueTree
-        dialogue={dialogue}
-        customScripts={{ setBackgroundColor }}
-      />
+    <div styles={{ backgroundColor, height: '100%' }}>
+      <SourceCode>{sourceCode}</SourceCode>
+      <div className={'dialogue-tree-container'}>
+
+        <DialogueTree
+          dialogue={dialogue}
+          customScripts={{ setBackgroundColor }}
+        />
+
+      </div>
     </div>
   )
 }
