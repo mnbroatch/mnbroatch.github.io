@@ -7,7 +7,7 @@
     "markdown-to-jsx": "^6.10.3",
     "raw-loader": "^4.0.0",
     "react": "^16.9.0",
-    "react-dialogue-tree": "0.4.1",
+    "react-dialogue-tree": "0.4.2",
     "react-dom": "^16.9.0",
     "react-syntax-highlighter": "^11.0.2"
   },

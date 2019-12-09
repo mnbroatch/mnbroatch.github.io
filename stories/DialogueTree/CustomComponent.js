@@ -3,14 +3,6 @@ import DialogueTree from 'react-dialogue-tree'
 import SourceCode from './SourceCode.js'
 import sourceCode from '!!raw-loader!./CustomComponent.js';
 
-const ButtonDialogueNode = ({ active, goToNode, text, then }) => (
-  <button
-    onClick={() => { if (active) goToNode({ then }) }}
-  >
-    {text}
-  </button>
-)
-
 const dialogue = {
   root: {
     text: 'The next dialogue node will be a custom component!',
@@ -23,6 +15,15 @@ const dialogue = {
     }
   }
 }
+
+// Our custom component. This is passed to DialogueTree below.
+const ButtonDialogueNode = ({ active, goToNode, text, then }) => (
+  <button
+    onClick={() => { if (active) goToNode({ then }) }}
+  >
+    {text}
+  </button>
+)
 
 export default () => (
   <div>

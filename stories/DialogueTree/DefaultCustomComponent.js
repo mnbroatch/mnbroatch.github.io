@@ -28,7 +28,7 @@ Too much *fun*!
   }
 }
 
-// Our default custom component. This is passed to DialogueTree below.
+// Our custom component. This is passed as the default to DialogueTree below.
 const DialogueNodeWithMarkdown = (props) => (
   <DialogueNode
     {...props}
