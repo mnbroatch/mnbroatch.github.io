@@ -4,12 +4,12 @@
   "description": "Portfolio of Matthew Broatch",
   "main": "index.js",
   "dependencies": {
-    "markdown-to-jsx": "^6.10.3",
     "raw-loader": "^4.0.0",
     "react": "^16.9.0",
-    "react-dialogue-tree": "0.4.2",
+    "react-dialogue-tree": "0.5.0",
     "react-dom": "^16.9.0",
-    "react-syntax-highlighter": "^11.0.2"
+    "react-syntax-highlighter": "^11.0.2",
+    "react-useinterval": "1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

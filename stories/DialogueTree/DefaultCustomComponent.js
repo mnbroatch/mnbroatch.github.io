@@ -1,38 +1,35 @@
 import React from 'react';
-import Markdown from 'markdown-to-jsx';
+import TypingAnimation from '../../components/TypingAnimation';
 import DialogueTree, { DialogueNode } from 'react-dialogue-tree'
 import SourceCode from './SourceCode.js';
 import sourceCode from '!!raw-loader!./DefaultCustomComponent.js'
 
 const dialogue = {
   root: {
-    text: 'This dialogue uses the **default custom component** feature and [markdown-to-jsx](http://daringfireball.net/projects/markdown/) to interpret markdown in all nodes by default!',
+    text: 'This dialogue uses the "default custom component" feature to add a typing animation to every prompt!',
     then: {
-      text: `
-
-# Ain't that cool?
-
-Here is
-
-  - some
-  - **random**
-  - ~~formatting~~
-
-Too much *fun*!
-
-      `,
-      then: {
-        text: 'OK, enough of that.'
-      }
+      text: 'It works whether a node has choices or not!',
+      choices: [
+        {
+          text: 'Hooray! Again!',
+          then: 'root'
+        },
+        {
+          text: 'That\'s nice.',
+          then: {
+            text: 'It certainly is.'
+          }
+        }
+      ]
     }
   }
 }
 
 // Our custom component. This is passed as the default to DialogueTree below.
-const DialogueNodeWithMarkdown = (props) => (
+const DialogueNodeWithTypingAnimation = (props) => (
   <DialogueNode
     {...props}
-    text={<Markdown>{props.text}</Markdown>}
+    text={<TypingAnimation delay={20}>{props.text}</TypingAnimation>}
   />
 )
 
@@ -43,7 +40,7 @@ export default () => (
 
       <DialogueTree
         dialogue={dialogue}
-        customComponents={{ default: DialogueNodeWithMarkdown }}
+        customComponents={{ default: DialogueNodeWithTypingAnimation }}
       />
 
     </div>

@@ -28,7 +28,7 @@ const dialogue = {
     }
   },
   end: {
-    text: 'Go ahead and check out the other stories under DialogueTree in the sidebar!'
+    text: 'Go ahead and check out the other more advanced stories under DialogueTree in the sidebar!'
   }
 }
 
