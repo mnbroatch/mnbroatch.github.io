@@ -1,6 +1,5 @@
 import React from 'react';
-import Markdown from 'markdown-to-jsx';
-import DialogueTree, { DialogueNode } from 'react-dialogue-tree'
+import DialogueTree from 'react-dialogue-tree'
 import './styles.css'
 
 export { default as Basic } from './Basic.js';

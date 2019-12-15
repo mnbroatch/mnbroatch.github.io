@@ -1,6 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
-import getYInShiftingSineWave from '../../utilities/getYInShiftingSineWave.js'
-import percentToHexColor from '../../utilities/percentToHexColor.js'
+import React, { useState, useEffect } from 'react'
 import useInterval from 'react-useinterval'
 
 export default function TypingAnimation ({ children, delay }) {

@@ -1,5 +1,4 @@
 import React from 'react';
-import Markdown from 'markdown-to-jsx';
 import DialogueTree from 'react-dialogue-tree'
 import SourceCode from './SourceCode.js'
 import sourceCode from '!!raw-loader!./Basic.js'

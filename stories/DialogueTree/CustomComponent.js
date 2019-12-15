@@ -17,9 +17,9 @@ const dialogue = {
 }
 
 // Our custom component. This is passed to DialogueTree below.
-const ButtonDialogueNode = ({ active, goToNode, text, then }) => (
+const ButtonDialogueNode = ({ goToNode, text, chosenChoice, then }) => (
   <button
-    onClick={() => { if (active) goToNode({ then }) }}
+    onClick={chosenChoice ? undefined : () => { goToNode({ then }) }}
   >
     {text}
   </button>

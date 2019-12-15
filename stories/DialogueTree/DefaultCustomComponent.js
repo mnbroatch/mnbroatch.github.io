@@ -1,5 +1,5 @@
-import React from 'react';
-import TypingAnimation from '../../components/TypingAnimation';
+import React, { useState, useEffect } from 'react'
+import useInterval from 'react-useinterval'
 import DialogueTree, { DialogueNode } from 'react-dialogue-tree'
 import SourceCode from './SourceCode.js';
 import sourceCode from '!!raw-loader!./DefaultCustomComponent.js'
@@ -43,6 +43,22 @@ export default () => (
         customComponents={{ default: DialogueNodeWithTypingAnimation }}
       />
 
-    </div>
   </div>
+</div>
 )
+
+// The guts of the typing animation
+function TypingAnimation ({ children, delay }) {
+  if (typeof children !== 'string') return null
+
+  const [ charactersSoFar, setCharactersSoFar ] = useState(children[0])
+  const isFinished = charactersSoFar.length === children.length
+
+  useInterval(() => {
+    setCharactersSoFar(children.slice(0, charactersSoFar.length + 1))
+  }, isFinished ? null : delay)
+
+  useEffect(() => { setCharactersSoFar(children[0]) }, [children])
+
+  return charactersSoFar
+}
