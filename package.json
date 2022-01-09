@@ -6,7 +6,7 @@
   "dependencies": {
     "raw-loader": "^4.0.0",
     "react": "^16.9.0",
-    "react-dialogue-tree": "/home/matt/Programming/npm-packs/react-dialogue-tree-0.6.1.tgz",
+    "react-dialogue-tree": "0.6.3",
     "react-dom": "^16.9.0",
     "react-syntax-highlighter": "^11.0.2",
     "react-useinterval": "1.0.1"
