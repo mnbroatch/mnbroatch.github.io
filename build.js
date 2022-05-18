@@ -1285,15 +1285,14 @@ var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
 function getAnswers(setSize, wordLength) {
   var possibleWords = game_words_namespaceObject.filter(function (word) {
-    return word.length === wordLength && !curse_words_namespaceObject.includes(word);
+    return word.length === +wordLength && !curse_words_namespaceObject.includes(word);
   });
-
-  var x = main_game_toConsumableArray(possibleWords).sort(function () {
+  console.log('-------------');
+  console.log('wordLength', wordLength);
+  console.log('possibleWords', possibleWords.length);
+  return main_game_toConsumableArray(possibleWords).sort(function () {
     return Math.random() - 0.5;
   }).slice(0, setSize);
-
-  console.log('x', x);
-  return x;
 }
 
 function MainGame(_ref) {
@@ -1369,7 +1368,7 @@ function MainGame(_ref) {
   }, [state.guesses]);
   (0,react.useEffect)(function () {
     setAnswers(getAnswers(options.boardsCount.value, options.wordLength.value));
-  }, [options.boardsCount, options.wordLength]);
+  }, [options.boardsCount.value, options.wordLength.value]);
   return /*#__PURE__*/react.createElement("div", null, answers.map(function (answer) {
     return /*#__PURE__*/react.createElement(Board, {
       answer: answer,
@@ -1557,7 +1556,7 @@ var defaultOptions = {
     value: 999,
     range: [1, 6],
     multiplierCurve: function multiplierCurve(value, options) {
-      var effectiveValue = value + options.boardsCount.value - 1;
+      var effectiveValue = value - options.boardsCount.value + 1;
 
       if (effectiveValue === 1) {
         return 200;
@@ -1598,12 +1597,18 @@ var defaultOptions = {
 };
 
 function getPointsEarned(options, endState) {
-  var basePoints = 1;
-  return Object.values(options).reduce(function (acc, _ref) {
-    var multiplierCurve = _ref.multiplierCurve,
-        value = _ref.value;
-    return acc + basePoints * multiplierCurve(value, options) - 1;
-  }, basePoints);
+  if (!endState.answers.every(function (answer) {
+    return endState.guesses.includes(answer);
+  })) {
+    return 0;
+  } else {
+    var basePoints = 1;
+    return Object.values(options).reduce(function (acc, _ref) {
+      var multiplierCurve = _ref.multiplierCurve,
+          value = _ref.value;
+      return acc + basePoints * multiplierCurve(value, options) - 1;
+    }, basePoints);
+  }
 }
 
 function App() {
@@ -1661,9 +1666,10 @@ function App() {
 
   var handleGameEnd = function handleGameEnd(endState) {
     setUiState('game_end');
-    dispatch(app_objectSpread({
-      type: 'END_GAME'
-    }, endState));
+    dispatch({
+      type: 'END_GAME',
+      endState: endState
+    });
   };
 
   var handleCloseGameEnd = function handleCloseGameEnd() {
@@ -1681,7 +1687,7 @@ function App() {
     }
   }, []);
   (0,react.useEffect)(function () {
-    localStorage.setItem('word-mind', JSON.stringify(gameState));
+    localStorage.setItem('word-mind', JSON.stringify(gameState)); // localStorage.removeItem('word-mind')
   }, [gameState]);
   return /*#__PURE__*/react.createElement("div", {
     className: "root"
