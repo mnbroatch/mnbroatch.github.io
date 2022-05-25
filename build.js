@@ -1,7 +1,7 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 1803:
+/***/ 6460:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -17,7 +17,7 @@
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".screens{position:relative;overflow-x:hidden;overflow-y:visible}.screens--inner{position:relative}.screen{position:absolute;left:0;top:0;transform:translateX(100%);width:100%;height:100%;transition:transform .2s}.screen.screen--open{transform:translateX(0)}.keyboard{margin:70px;text-align:center}.boards{display:flex;flex-wrap:wrap}.board{margin:5px}.board--solved .guesses{background-color:tan}.guess{display:flex;border:1px solid #000}.guess__letter{display:flex;justify-content:center;align-items:center;height:40px;width:40px;margin:4px;border:1px solid #000;text-transform:uppercase}.guess__letter--correct{background-color:green;color:#fff}.guess__letter--present{background-color:#ff0}.current-guess--placeholder{visibility:hidden}.game-end{background-color:#eee;height:100%;margin-left:25%}.options{background-color:#ddd;height:100%;margin-left:25%;overflow:auto}.option{display:block;margin:4px;border:1px solid #000}.keyboard-letter{height:35px;width:35px;text-transform:uppercase;margin:3px;position:relative;padding:0}.keyboard-letter__letter{position:absolute;left:50%;top:50%;transform:translate(-50%, -50%)}.keyboard-letter--complete:not(.keyboard-letter--untouched){color:#444;background-color:#777}.keyboard-letter__background{width:100%;height:100%;display:flex}.keyboard-letter__background-section{flex:1}.keyboard-letter:not(.keyboard-letter--complete):not(.keyboard-letter--untouched) .keyboard-letter__background-section--correct{background-color:green}.keyboard-letter:not(.keyboard-letter--complete):not(.keyboard-letter--untouched) .keyboard-letter__background-section--present{background-color:#ff0}.keyboard-letter:not(.keyboard-letter--complete):not(.keyboard-letter--untouched) .keyboard-letter__background-section--absent{background-color:#777}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body{margin:0}.root{position:relative;padding:10px}.modals{position:absolute;overflow-x:hidden;overflow-y:visible;width:100%;height:100%;top:0;left:0;pointer-events:none}.modals__background{background-color:rgba(0,0,0,0);transition:background-color .3s;position:absolute;width:100%;height:100%}.modals__background--active{background-color:rgba(0,0,0,.7);pointer-events:auto}.modal{display:flex;position:absolute;left:0;top:0;transform:translateX(100%);width:100%;height:100%;transition:transform .2s;align-items:stretch}.modal__inner{position:relative;flex:1;background-color:#84a194;margin:5% 0 5% 10%;padding:35px;border-radius:50px 0 0 50px;pointer-events:auto}.modal__close-button{position:absolute;right:10px;top:10px}.modal--open{transform:translateX(0)}.keyboard{margin:70px;text-align:center}.boards{display:flex;flex-wrap:wrap;justify-content:center}.board{margin:5px}.board--solved .guesses{background-color:#f5b0cb}.guess{display:flex;border:1px solid #000}.guess__letter{display:flex;justify-content:center;align-items:center;height:40px;width:40px;margin:4px;border:1px solid #000;text-transform:uppercase}.guess__letter--correct{background-color:#a1e8af}.guess__letter--present{background-color:#f6bd60}.current-guess--placeholder{visibility:hidden}.rules{flex:1;overflow:auto}.option{display:block;margin:4px;border:1px solid #000}.keyboard-letter{height:35px;width:35px;text-transform:uppercase;margin:3px;position:relative;padding:0}.keyboard-letter__letter{position:absolute;left:50%;top:50%;transform:translate(-50%, -50%)}.keyboard-letter--complete:not(.keyboard-letter--untouched){background-color:#747c92}.keyboard-letter__background{width:100%;height:100%;display:flex}.keyboard-letter__background-section{flex:1}.keyboard-letter:not(.keyboard-letter--complete):not(.keyboard-letter--untouched) .keyboard-letter__background-section--correct{background-color:#a1e8af}.keyboard-letter:not(.keyboard-letter--complete):not(.keyboard-letter--untouched) .keyboard-letter__background-section--present{background-color:#f6bd60}.keyboard-letter:not(.keyboard-letter--complete):not(.keyboard-letter--untouched) .keyboard-letter__background-section--absent{background-color:#747c92}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -4550,7 +4550,9 @@ function MainGame(_ref) {
       didMount.current = true;
     }
   }, [options]);
-  return /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement("div", {
+  return /*#__PURE__*/react.createElement("div", {
+    className: "main-game"
+  }, /*#__PURE__*/react.createElement("div", {
     style: {
       color: 'white'
     }
@@ -4589,34 +4591,33 @@ MainGame.propTypes = {
   options: (prop_types_default()).object,
   handleGameEnd: (prop_types_default()).func
 };
-;// CONCATENATED MODULE: ./options.js
-function options_slicedToArray(arr, i) { return options_arrayWithHoles(arr) || options_iterableToArrayLimit(arr, i) || options_unsupportedIterableToArray(arr, i) || options_nonIterableRest(); }
+;// CONCATENATED MODULE: ./rules.js
+function rules_slicedToArray(arr, i) { return rules_arrayWithHoles(arr) || rules_iterableToArrayLimit(arr, i) || rules_unsupportedIterableToArray(arr, i) || rules_nonIterableRest(); }
 
-function options_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function rules_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function options_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return options_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return options_arrayLikeToArray(o, minLen); }
+function rules_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return rules_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return rules_arrayLikeToArray(o, minLen); }
 
-function options_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+function rules_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function options_iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function rules_iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
-function options_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function rules_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-function Options(_ref) {
-  var handleClose = _ref.handleClose,
-      options = _ref.options;
+function Rules(_ref) {
+  var options = _ref.options;
   var unlockedOptionEntries = Object.entries(options).filter(function (_ref2) {
-    var _ref3 = options_slicedToArray(_ref2, 2),
+    var _ref3 = rules_slicedToArray(_ref2, 2),
         unlocked = _ref3[1].unlocked;
 
     return unlocked;
   });
   return /*#__PURE__*/react.createElement("div", {
-    className: "options"
+    className: "rules"
   }, !unlockedOptionEntries.length && /*#__PURE__*/react.createElement("div", null, "No special rules unlocked. 6 guesses."), unlockedOptionEntries.map(function (_ref4) {
-    var _ref5 = options_slicedToArray(_ref4, 2),
+    var _ref5 = rules_slicedToArray(_ref4, 2),
         key = _ref5[0],
         option = _ref5[1];
 
@@ -4626,8 +4627,7 @@ function Options(_ref) {
     }, key, option.value);
   }));
 }
-Options.propTypes = {
-  handleClose: (prop_types_default()).func,
+Rules.propTypes = {
   options: (prop_types_default()).object
 };
 ;// CONCATENATED MODULE: ./game-end.js
@@ -4650,8 +4650,7 @@ function GameEnd(_ref) {
       points = _ref.points,
       lastPointsEarned = _ref.lastPointsEarned,
       handleSetOption = _ref.handleSetOption,
-      handleUnlockOption = _ref.handleUnlockOption,
-      handleClose = _ref.handleClose;
+      handleUnlockOption = _ref.handleUnlockOption;
   var optionEntries = Object.entries(options);
   var unlockedOptionEntries = optionEntries.filter(function (_ref2) {
     var _ref3 = game_end_slicedToArray(_ref2, 2),
@@ -4679,9 +4678,7 @@ function GameEnd(_ref) {
     className: "options"
   }, /*#__PURE__*/react.createElement("div", {
     className: "results"
-  }, /*#__PURE__*/react.createElement("button", {
-    onClick: handleClose
-  }, "Close"), /*#__PURE__*/react.createElement("div", null, points, " Points"), /*#__PURE__*/react.createElement("div", null, lastPointsEarned, " gained this round")), unlockedOptionEntries.map(function (_ref8) {
+  }, /*#__PURE__*/react.createElement("div", null, points, " Points"), /*#__PURE__*/react.createElement("div", null, lastPointsEarned, " gained this round")), unlockedOptionEntries.map(function (_ref8) {
     var _ref9 = game_end_slicedToArray(_ref8, 2),
         key = _ref9[0],
         option = _ref9[1];
@@ -4723,9 +4720,29 @@ GameEnd.propTypes = {
   options: (prop_types_default()).object,
   points: (prop_types_default()).number,
   lastPointsEarned: (prop_types_default()).number,
-  handleClose: (prop_types_default()).func,
   handleSetOption: (prop_types_default()).func,
   handleUnlockOption: (prop_types_default()).func
+};
+;// CONCATENATED MODULE: ./modal.js
+
+
+function Modal(_ref) {
+  var handleClose = _ref.handleClose,
+      children = _ref.children,
+      open = _ref.open;
+  return /*#__PURE__*/react.createElement("div", {
+    className: ['modal', open && 'modal--open'].filter(Boolean).join(' ')
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "modal__inner"
+  }, /*#__PURE__*/react.createElement("button", {
+    className: "modal__close-button",
+    onClick: handleClose
+  }, "Close"), children));
+}
+Modal.propTypes = {
+  children: (prop_types_default()).node,
+  open: (prop_types_default()).bool,
+  handleClose: (prop_types_default()).func
 };
 ;// CONCATENATED MODULE: ./default-options.js
 /* harmony default export */ const default_options = ({
@@ -4774,7 +4791,7 @@ GameEnd.propTypes = {
   },
   wordLength: {
     value: 5,
-    range: [1, 10],
+    range: [1, 8],
     multiplierCurve: function multiplierCurve(value) {
       if (value < 4) {
         return -1;
@@ -4816,8 +4833,6 @@ function optionsReducer(prev, _ref) {
       unlocked: true
     })));
   } else if (type === 'LOAD_INITIAL') {
-    console.log('savedOptions', savedOptions);
-    console.log('merge(prev, savedOptions)', merge_default()(prev, savedOptions));
     return merge_default()({}, prev, savedOptions);
   }
 }
@@ -4848,6 +4863,7 @@ function app_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) l
 function app_iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function app_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -4956,32 +4972,45 @@ function App() {
     });
     localStorage.setItem('word-mind_options', JSON.stringify(Object.fromEntries(optionsEntriesToSave)));
     localStorage.setItem('word-mind_points', JSON.stringify(points));
-  }, [options, points]); // localStorage.removeItem('word-mind_options')
-  // localStorage.removeItem('word-mind_points')
+  }, [options, points]);
+
+  var handleClearAll = function handleClearAll() {
+    localStorage.removeItem('word-mind_options');
+    localStorage.removeItem('word-mind_points');
+    optionsDispatch({
+      type: 'LOAD_INITIAL',
+      savedOptions: default_options
+    });
+    setPoints(0);
+  };
 
   return /*#__PURE__*/react.createElement("div", {
     className: "root"
   }, /*#__PURE__*/react.createElement("button", {
     onClick: function onClick() {
-      return setUiState(uiState === 'options' ? 'game' : 'options');
+      setUiState(uiState === 'rules' ? 'game' : 'rules');
     }
-  }, "Options"), /*#__PURE__*/react.createElement("div", {
+  }, "Rules"), /*#__PURE__*/react.createElement("button", {
+    onClick: handleClearAll
+  }, "Clear All"), /*#__PURE__*/react.createElement("div", {
     className: "points"
-  }, points, " Points"), /*#__PURE__*/react.createElement("div", {
-    className: "screens"
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "screens--inner"
-  }, /*#__PURE__*/react.createElement(MainGame, {
+  }, points, " Points"), /*#__PURE__*/react.createElement(MainGame, {
     key: gameId,
     options: options,
     handleGameEnd: handleGameEnd
   }), /*#__PURE__*/react.createElement("div", {
-    className: ['screen', uiState === 'options' && 'screen--open'].filter(Boolean).join(' ')
-  }, /*#__PURE__*/react.createElement(Options, {
-    options: options,
+    className: "modals"
+  }, /*#__PURE__*/react.createElement("a", {
+    className: ['modals__background', uiState !== 'game' && 'modals__background--active'].filter(Boolean).join(' '),
+    onClick: handleClose
+  }), /*#__PURE__*/react.createElement(Modal, {
+    open: uiState === 'rules',
     handleClose: handleClose
-  })), /*#__PURE__*/react.createElement("div", {
-    className: ['screen', uiState === 'game_end' && 'screen--open'].filter(Boolean).join(' ')
+  }, /*#__PURE__*/react.createElement(Rules, {
+    options: options
+  })), /*#__PURE__*/react.createElement(Modal, {
+    open: uiState === 'game_end',
+    handleClose: handleClose
   }, /*#__PURE__*/react.createElement(GameEnd, {
     options: options,
     points: points,
@@ -4989,7 +5018,7 @@ function App() {
     handleClose: handleClose,
     handleSetOption: handleSetOption,
     handleUnlockOption: handleUnlockOption
-  })))));
+  }))));
 }
 // EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js
 var injectStylesIntoStyleTag = __webpack_require__(3379);
@@ -5009,9 +5038,9 @@ var insertStyleElement_default = /*#__PURE__*/__webpack_require__.n(insertStyleE
 // EXTERNAL MODULE: ./node_modules/style-loader/dist/runtime/styleTagTransform.js
 var styleTagTransform = __webpack_require__(4589);
 var styleTagTransform_default = /*#__PURE__*/__webpack_require__.n(styleTagTransform);
-// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./styles.css
-var cjs_js_styles = __webpack_require__(1803);
-;// CONCATENATED MODULE: ./styles.css
+// EXTERNAL MODULE: ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./styles.scss
+var cjs_js_styles = __webpack_require__(6460);
+;// CONCATENATED MODULE: ./styles.scss
 
       
       
