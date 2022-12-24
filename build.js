@@ -6828,6 +6828,7 @@ function app_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var OPTION_COST = 2;
+var x = 'x';
 
 function app_isItemActive(item) {
   return item.activeUntil > Date.now();
@@ -7111,13 +7112,14 @@ function App() {
   (0,react.useEffect)(function () {
     var resizeHandler = debounce_default()(function () {
       document.documentElement.style.setProperty('--vh', "".concat(window.innerHeight * 0.01, "px"));
+      x = 'blah: ' + window.innerHeight + ' | ' + roundTimeRemaining;
     }, 100);
     window.addEventListener('resize', resizeHandler);
     resizeHandler();
     return function () {
       window.removeEventListener('resize', resizeHandler);
     };
-  }, []); // const handleClearAll = () => {
+  }, [roundTimeRemaining]); // const handleClearAll = () => {
   //   localStorage.clear()
   //   skillsDispatch({ type: 'LOAD_INITIAL' })
   //   setUiState('game')
@@ -7147,7 +7149,7 @@ function App() {
     amount: xp
   }), /*#__PURE__*/react.createElement(MoneyDisplay, {
     amount: money
-  })), /*#__PURE__*/react.createElement("div", {
+  })), /*#__PURE__*/react.createElement("div", null, "x: ", x), /*#__PURE__*/react.createElement("div", {
     className: "main-content"
   }, skills.gameTimeLimit.value !== Infinity && /*#__PURE__*/react.createElement("div", {
     className: "game-time-remaining"
